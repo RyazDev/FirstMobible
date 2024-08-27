@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://127.0.0.1:5500/html/index.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Mobile-First</title>
+    
+<link rel="stylesheet" href="./Diseño Mobile-First_files/style.css"></head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">Inicio</div>
+                <div class="nav-item">Servicios</div>
+                <div class="nav-item">Contacto</div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="section-a">
+            <div class="box box-a"><span>A</span></div>
+        </section>
+        <section class="section-middle">
+            <div class="box color-1"><span>1</span></div>
+            <div class="box color-2"><span>2</span></div>
+            <div class="box color-3"><span>3</span></div>
+            <div class="box color-4"><span>4</span></div>
+        </section>
+        <section class="section-b">
+            <div class="box color-b">
+                <span>B</span>
+                <div class="divider"></div>
+            </div>
+        </section>
+        <section class="section-c">
+            <div class="box color-c">
+                <span>C</span>
+                <div class="divider"></div>
+            </div>
+        </section>
+        <section class="section-d">
+            <div class="box color-d">
+                <span>D</span>
+                <div class="divider"></div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+</body></html>

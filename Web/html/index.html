@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Mobile-First</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">Inicio</div>
+                <div class="nav-item">Servicios</div>
+                <div class="nav-item">Contacto</div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="section-a">
+            <div class="box box-a"><span>A</span></div>
+        </section>
+        <section class="section-middle">
+            <div class="box color-1"><span>1</span></div>
+            <div class="box color-2"><span>2</span></div>
+            <div class="box color-3"><span>3</span></div>
+            <div class="box color-4"><span>4</span></div>
+        </section>
+        <section class="section-b">
+            <div class="box color-b">
+                <span>B</span>
+                <div class="divider"></div>
+            </div>
+        </section>
+        <section class="section-c">
+            <div class="box color-c">
+                <span>C</span>
+                <div class="divider"></div>
+            </div>
+        </section>
+        <section class="section-d">
+            <div class="box color-d">
+                <span>D</span>
+                <div class="divider"></div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
+

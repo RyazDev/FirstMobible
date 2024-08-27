@@ -1,0 +1,287 @@
+/* Estilos base para móviles (hasta 480 px) */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f8f9fa;
+    padding: 10px;
+    z-index: 10;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+}
+
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+}
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 40px; /* Justo debajo del encabezado */
+    right: 0;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.nav-menu.show {
+    display: block;
+}
+
+.nav-item {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-item:last-child {
+    border-bottom: none;
+}
+
+/* Estilos para la sección principal */
+main {
+    padding: 10px;
+    padding-top: 60px; /* Ajustar para el encabezado fijo */
+}
+
+.section-a, .section-b, .section-c, .section-card, .section-card-blue {
+    margin-bottom: 10px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vw; /* Mantener los cuadros cuadrados */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el tamaño total */
+    position: relative;
+}
+/* Círculo dentro de cada cuadro */
+.box::before {
+    content: '';
+    position: absolute;
+    width: 40px; /* Tamaño del borde circular */
+    height: 40px; /* Tamaño del borde circular */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 50%; /* Hacerlo circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    top: 10px; /* Posición desde el borde superior del cuadro */
+    left: 10px; /* Posición desde el borde izquierdo del cuadro */
+}
+
+/* Letras en la parte superior izquierda */
+.box span {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Ajustar el divisor */
+.box .divider {
+    position: absolute;
+    width: 20vw; /* Tamaño del divisor */
+    height: 20vw; /* Tamaño del divisor */
+    bottom: 10px; /* Alineación vertical */
+    right: 10px; /* Alineación horizontal */
+    background-color: #007bff; /* Azul */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+}
+
+.box.color-1 {
+    background-color: #0056b3; /* Azul no tan oscuro */
+}
+
+.box.color-2 {
+    background-color: #3399ff; /* Azul más claro */
+}
+
+.box.color-3 {
+    background-color: #d9d9d9; /* Gris claro */
+}
+
+.box.color-4 {
+    background-color: #b3b3b3; /* Gris oscuro */
+}
+
+.box.color-b {
+    background-color: #f0f0f0; /* Similar a blanco */
+}
+
+.box.color-c {
+    background-color: #e0e0e0; /* Similar a blanco, diferente tonalidad */
+}
+
+
+
+/* Cuadros 1, 2, 3, 4 */
+.box.color-1,
+.box.color-2,
+.box.color-3,
+.box.color-4 {
+    width: 100%; /* Ocupa toda la anchura de la columna */
+    height: 100vw; /* Mantener proporción deseada */
+}
+
+/* Cuadros B, C, D */
+.box.color-b,
+.box.color-c,
+.box.color-d {
+    width: 100vw; /* Ocupa la mitad del ancho del contenedor */
+    height: 100vw; /* Mantener proporción cuadrada */
+    position: relative; /* Necesario para el posicionamiento del divider */
+}
+
+/* Divider dentro de los cuadros B, C, y D */
+.box.color-b .divider,
+.box.color-c .divider,
+.box.color-d .divider {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100vw; /* Tamaño del divider (1/4 del tamaño del cuadro) */
+    height: 40vw; /* Tamaño del divider (1/4 del tamaño del cuadro) */
+    background-color: #007bff; /* Azul */
+}
+
+/* Estilos para tablets (481 px a 1024 px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .section-middle {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+        gap: 10px; /* Espacio entre cuadros */
+    }
+
+    /* Cuadro A */
+    .box.box-a {
+        width: 100vw; /* Ocupa toda la anchura del contenedor */
+        height: 70vw; /* Mantener proporción deseada */
+        grid-column: span 2; /* Ocupa ambas columnas */
+    }
+
+    /* Cuadros 1, 2, 3, 4 */
+    .box.color-1,
+    .box.color-2,
+    .box.color-3,
+    .box.color-4 {
+        width: 100%; /* Ocupa toda la anchura de la columna */
+        height: 50vw; /* Mantener proporción deseada */
+    }
+
+    .box.color-b,
+    .box.color-c,
+    .box.color-d {
+        width: 100%; /* Ocupa toda la anchura del contenedor */
+        height: 50vw; /* Mantener proporción deseada */
+    }
+
+    /* Divider dentro de los cuadros B, C, y D */
+    .box.color-b .divider,
+    .box.color-c .divider,
+    .box.color-d .divider {
+        width: 30vw; /* Tamaño del divider (1/4 del tamaño del cuadro) */
+        height: 25vw; /* Tamaño del divider (1/4 del tamaño del cuadro) */
+        bottom: 0;
+        right: 0;
+    }
+}
+
+/* Estilos para computadoras de escritorio (1025 px y más) */
+@media (min-width: 1025px) {
+    .main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas iguales */
+        gap: 10px; /* Espacio entre cuadros */
+    }
+
+    .section-a {
+        grid-column: span 4; /* Ocupa toda la fila */
+    }
+
+    .section-middle {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas iguales */
+        gap: 10px; /* Espacio entre cuadros */
+        grid-column: span 4; /* Ocupa toda la fila */
+    }
+
+    /* Cuadro A */
+    .box.box-a {
+        grid-column: span 4; /* Ocupa toda la fila */
+        width: 100%; /* Ocupa toda la anchura del contenedor */
+        height: 40vw; /* Altura proporcional a la anchura */
+        position: relative; /* Necesario para el posicionamiento del divisor */
+    }
+
+    /* Cuadros 1, 2, 3, 4 en fila */
+    .box.color-1,
+    .box.color-2,
+    .box.color-3,
+    .box.color-4 {
+        width: 100%; /* Ocupa toda la anchura de la columna */
+        height: 30vw; /* Altura proporcional a la anchura */
+        position: relative; /* Necesario para el posicionamiento del divisor */
+    }
+
+    /* Cuadros B, C, D */
+    .section-b,
+    .section-c,
+    .section-d {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Una columna */
+        gap: 10px; /* Espacio entre cuadros */
+        width: 100%; /* Ocupa toda la anchura de la columna */
+    }
+
+    /* Cuadros B, C, D */
+    .box.color-b,
+    .box.color-c,
+    .box.color-d {
+        width: 100%; /* Ocupa toda la anchura de la columna */
+        height: 50vw; /* Mantener proporción cuadrada */
+        position: relative; /* Necesario para el posicionamiento del divisor */
+    }
+
+    /* Divider dentro de los cuadros B, C, y D para escritorio */
+    .box.color-b .divider,
+    .box.color-c .divider,
+    .box.color-d .divider {
+        position: absolute;
+        width: 20vw; /* Tamaño del divisor */
+        height: 20vw; /* Tamaño del divisor */
+        bottom: 10px; /* Alineación vertical */
+        right: 10px; /* Alineación horizontal */
+        background-color: #007bff; /* Azul */
+        border-radius: 4px; /* Bordes ligeramente redondeados */
+    }
+}
+
